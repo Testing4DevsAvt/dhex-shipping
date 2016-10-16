@@ -97,6 +97,11 @@ public class ShippingService {
     public ShippingStatus registerStatus(String reqId, String loc, String stat, String obs) {
         // Search the shipping request that matches with request ID.
         // Otherwise throws an exception.
+
+        validateParameter(reqId , "RequestId");
+        validateParameter(loc, "Location");
+        validateParameter(stat, "Status");
+
         ShippingRequest shipReq = storedShippingRequests.stream()
                 .limit(1)
                 .filter(sr -> sr.getId().equals(reqId))

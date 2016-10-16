@@ -17,6 +17,9 @@ public class ShippingRequest {
     private String observations;
     private LinkedList<ShippingStatus> shippingStatusList;
 
+    public ShippingRequest(){
+        // not implemented
+    }
     private ShippingRequest(String id, String receiver, String sender, String destinationAddress,
                             double sendingCost, OffsetDateTime registrationMoment) {
         this.id = id;
